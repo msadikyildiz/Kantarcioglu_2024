@@ -1,0 +1,157 @@
+cat: ./src/22.1-bowtie2-align-sample.run: No such file or directory
+
+############################ END OF SOURCE SCRIPT #######################
+
+9357439 reads; of these:
+  9357439 (100.00%) were paired; of these:
+    453777 (4.85%) aligned concordantly 0 times
+    8890767 (95.01%) aligned concordantly exactly 1 time
+    12895 (0.14%) aligned concordantly >1 times
+    ----
+    453777 pairs aligned concordantly 0 times; of these:
+      420892 (92.75%) aligned discordantly 1 time
+    ----
+    32885 pairs aligned 0 times concordantly or discordantly; of these:
+      65770 mates make up the pairs; of these:
+        44795 (68.11%) aligned 0 times
+        20414 (31.04%) aligned exactly 1 time
+        561 (0.85%) aligned >1 times
+99.76% overall alignment rate
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+SML1_CBC20_S129 is aligned.
+6841234 reads; of these:
+  6841234 (100.00%) were paired; of these:
+    354955 (5.19%) aligned concordantly 0 times
+    6480580 (94.73%) aligned concordantly exactly 1 time
+    5699 (0.08%) aligned concordantly >1 times
+    ----
+    354955 pairs aligned concordantly 0 times; of these:
+      328170 (92.45%) aligned discordantly 1 time
+    ----
+    26785 pairs aligned 0 times concordantly or discordantly; of these:
+      53570 mates make up the pairs; of these:
+        35039 (65.41%) aligned 0 times
+        18220 (34.01%) aligned exactly 1 time
+        311 (0.58%) aligned >1 times
+99.74% overall alignment rate
+[bam_sort_core] merging from 6 files and 1 in-memory blocks...
+SML1_OXA_S131 is aligned.
+5975001 reads; of these:
+  5975001 (100.00%) were paired; of these:
+    358098 (5.99%) aligned concordantly 0 times
+    5610915 (93.91%) aligned concordantly exactly 1 time
+    5988 (0.10%) aligned concordantly >1 times
+    ----
+    358098 pairs aligned concordantly 0 times; of these:
+      340372 (95.05%) aligned discordantly 1 time
+    ----
+    17726 pairs aligned 0 times concordantly or discordantly; of these:
+      35452 mates make up the pairs; of these:
+        22891 (64.57%) aligned 0 times
+        12191 (34.39%) aligned exactly 1 time
+        370 (1.04%) aligned >1 times
+99.81% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+SML1_PIP_S133 is aligned.
+5128759 reads; of these:
+  5128759 (100.00%) were paired; of these:
+    107872 (2.10%) aligned concordantly 0 times
+    5015363 (97.79%) aligned concordantly exactly 1 time
+    5524 (0.11%) aligned concordantly >1 times
+    ----
+    107872 pairs aligned concordantly 0 times; of these:
+      88045 (81.62%) aligned discordantly 1 time
+    ----
+    19827 pairs aligned 0 times concordantly or discordantly; of these:
+      39654 mates make up the pairs; of these:
+        27980 (70.56%) aligned 0 times
+        11520 (29.05%) aligned exactly 1 time
+        154 (0.39%) aligned >1 times
+99.73% overall alignment rate
+[bam_sort_core] merging from 4 files and 1 in-memory blocks...
+SML1_UT_S125 is aligned.
+10167692 reads; of these:
+  10167692 (100.00%) were paired; of these:
+    424425 (4.17%) aligned concordantly 0 times
+    9731829 (95.71%) aligned concordantly exactly 1 time
+    11438 (0.11%) aligned concordantly >1 times
+    ----
+    424425 pairs aligned concordantly 0 times; of these:
+      375639 (88.51%) aligned discordantly 1 time
+    ----
+    48786 pairs aligned 0 times concordantly or discordantly; of these:
+      97572 mates make up the pairs; of these:
+        63186 (64.76%) aligned 0 times
+        33941 (34.79%) aligned exactly 1 time
+        445 (0.46%) aligned >1 times
+99.69% overall alignment rate
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+SML2_CBC10_S128 is aligned.
+5922784 reads; of these:
+  5922784 (100.00%) were paired; of these:
+    214486 (3.62%) aligned concordantly 0 times
+    5701738 (96.27%) aligned concordantly exactly 1 time
+    6560 (0.11%) aligned concordantly >1 times
+    ----
+    214486 pairs aligned concordantly 0 times; of these:
+      187743 (87.53%) aligned discordantly 1 time
+    ----
+    26743 pairs aligned 0 times concordantly or discordantly; of these:
+      53486 mates make up the pairs; of these:
+        35329 (66.05%) aligned 0 times
+        17835 (33.35%) aligned exactly 1 time
+        322 (0.60%) aligned >1 times
+99.70% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+SML2_CBC20_S130 is aligned.
+10665733 reads; of these:
+  10665733 (100.00%) were paired; of these:
+    463348 (4.34%) aligned concordantly 0 times
+    10187026 (95.51%) aligned concordantly exactly 1 time
+    15359 (0.14%) aligned concordantly >1 times
+    ----
+    463348 pairs aligned concordantly 0 times; of these:
+      337700 (72.88%) aligned discordantly 1 time
+    ----
+    125648 pairs aligned 0 times concordantly or discordantly; of these:
+      251296 mates make up the pairs; of these:
+        171625 (68.30%) aligned 0 times
+        79063 (31.46%) aligned exactly 1 time
+        608 (0.24%) aligned >1 times
+99.20% overall alignment rate
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+SML2_OXA_S1 is aligned.
+6591470 reads; of these:
+  6591470 (100.00%) were paired; of these:
+    370264 (5.62%) aligned concordantly 0 times
+    6215153 (94.29%) aligned concordantly exactly 1 time
+    6053 (0.09%) aligned concordantly >1 times
+    ----
+    370264 pairs aligned concordantly 0 times; of these:
+      326086 (88.07%) aligned discordantly 1 time
+    ----
+    44178 pairs aligned 0 times concordantly or discordantly; of these:
+      88356 mates make up the pairs; of these:
+        68767 (77.83%) aligned 0 times
+        19209 (21.74%) aligned exactly 1 time
+        380 (0.43%) aligned >1 times
+99.48% overall alignment rate
+[bam_sort_core] merging from 6 files and 1 in-memory blocks...
+SML2_PIP_S134 is aligned.
+7549074 reads; of these:
+  7549074 (100.00%) were paired; of these:
+    285352 (3.78%) aligned concordantly 0 times
+    7257981 (96.14%) aligned concordantly exactly 1 time
+    5741 (0.08%) aligned concordantly >1 times
+    ----
+    285352 pairs aligned concordantly 0 times; of these:
+      256620 (89.93%) aligned discordantly 1 time
+    ----
+    28732 pairs aligned 0 times concordantly or discordantly; of these:
+      57464 mates make up the pairs; of these:
+        37113 (64.58%) aligned 0 times
+        20134 (35.04%) aligned exactly 1 time
+        217 (0.38%) aligned >1 times
+99.75% overall alignment rate
+[bam_sort_core] merging from 7 files and 1 in-memory blocks...
+SML2_UT_S126 is aligned.

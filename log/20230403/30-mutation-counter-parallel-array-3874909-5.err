@@ -1,0 +1,47 @@
+# #!/bin/bash
+# 
+# #SBATCH --partition=256GB 		# partition name
+# #SBATCH --time=1-00:00 		# hours:minutes runlimit after which job will be killed
+# #SBATCH --array=0-9
+# #SBATCH --nodes=1
+# #SBATCH --job-name 30-mutation-counter-parallel-array		# Job name
+# #SBATCH -o ./log/20230403/30-mutation-counter-parallel-array-%j-%a.out		# File to which standard out will be written
+# #SBATCH -e ./log/20230403/30-mutation-counter-parallel-array-%j-%a.err 		# File to which standard err will be written
+# cat src/30-mutation-counter-parallel-array.run | perl -ne ' print "# ".$_ ' - >>/dev/stderr
+# printf "\n############################ END OF SOURCE SCRIPT #######################\n\n" >&2
+# 
+# source /home2/s414024/.bashrc
+# 
+# PROJECT_PATH="/project/greencenter/Toprak_lab/shared/TolC-Mutagenesis"
+# EXP_ID="20230403"
+# 
+# conda activate toprak-ngs
+# 
+# DIRECTORY="$PROJECT_PATH/data/$EXP_ID/alignment/bowtie2-single"
+# FASTA="$PROJECT_PATH/data/reference/TolC-oxb14-amplicon.fasta"
+# OUTPUT_FOLDER="$PROJECT_PATH/dump/$EXP_ID/mutation-tables-single"
+# CONTIG="TolC-oxb14-amplicon"
+# 
+# mkdir -p $OUTPUT_FOLDER
+# cd $PROJECT_PATH
+# 
+# 
+# FILES=($DIRECTORY/*.bam)
+# SAMPLE_PATH=${FILES[$SLURM_ARRAY_TASK_ID]}
+# SAMPLE=${SAMPLE_PATH##*/}
+# SAMPLE=${SAMPLE%.bam}
+# 
+# python3 src/30-mutation-counter.py   \
+# --bam $SAMPLE_PATH                   \
+# --fasta $FASTA                       \
+# --contig $CONTIG                     \
+# --start-codon-pos 100                 \
+# --stop-codon-pos 1581                 \
+# --base-quality-filter 30             \
+# --output $OUTPUT_FOLDER/$SAMPLE      
+#     
+# echo "$SAMPLE nucleotide changes counted." >>/dev/stderr
+############################ END OF SOURCE SCRIPT #######################
+
+0it [00:00, ?it/s]902800it [00:30, 30093.28it/s]902800it [00:40, 30093.28it/s]1821389it [01:00, 30402.83it/s]1821389it [01:10, 30402.83it/s]2768002it [01:30, 30928.35it/s]2768002it [01:40, 30928.35it/s]3686532it [02:00, 30805.68it/s]3686532it [02:10, 30805.68it/s]4591109it [02:30, 30570.15it/s]4591109it [02:40, 30570.15it/s]5498978it [03:00, 30465.48it/s]5498978it [03:10, 30465.48it/s]6418998it [03:30, 30531.46it/s]6418998it [03:40, 30531.46it/s]7326640it [04:00, 30443.35it/s]7326640it [04:10, 30443.35it/s]8245563it [04:30, 30501.93it/s]8245563it [04:40, 30501.93it/s]9156980it [05:00, 30464.45it/s]9156980it [05:10, 30464.45it/s]10023098it [05:30, 29976.64it/s]10023098it [05:40, 29976.64it/s]10931279it [06:00, 30066.69it/s]10931279it [06:10, 30066.69it/s]11843689it [06:30, 30171.79it/s]11843689it [06:40, 30171.79it/s]12751085it [07:00, 30194.35it/s]12751085it [07:10, 30194.35it/s]13664282it [07:30, 30268.35it/s]13664282it [07:40, 30268.35it/s]14573362it [08:00, 30278.67it/s]14573362it [08:10, 30278.67it/s]15477160it [08:30, 30232.93it/s]15477160it [08:40, 30232.93it/s]16392552it [09:00, 30317.10it/s]16392552it [09:10, 30317.10it/s]17307022it [09:30, 30366.71it/s]17307022it [09:40, 30366.71it/s]18208076it [10:00, 30267.15it/s]18208076it [10:10, 30267.15it/s]19127292it [10:30, 30379.21it/s]19127292it [10:40, 30379.21it/s]20039089it [11:00, 30383.40it/s]20272198it [11:05, 30484.39it/s]
+SML2_CBC10_S128 nucleotide changes counted.

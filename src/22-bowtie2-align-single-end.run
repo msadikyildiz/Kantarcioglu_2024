@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#SBATCH --partition=256GBv1 		# partition name
+#SBATCH --time=1-00:00 		# hours:minutes runlimit after which job will be killed
+#SBATCH --nodes=1
+#SBATCH --job-name 22.1-bowtie2-align-single-end		# Job name
+#SBATCH -o ./log/20230403/22.1-bowtie2-align-single-end-%j.out			# File to which standard out will be written
+#SBATCH -e ./log/20230403/22.1-bowtie2-align-single-end-%j.err 		# File to which standard err will be written
+cat ./src/22.1-bowtie2-align-single-end.run | perl -ne ' print "# ".$_ ' - >>/dev/stderr
+printf "\n############################ END OF SOURCE SCRIPT #######################\n\n" >&2
+
+source /home2/s414024/.bashrc
+
+PROJECT_PATH="/project/greencenter/Toprak_lab/shared/TolC-Mutagenesis"
+EXP_ID="20230403"
+
+conda activate toprak-ngs
+
+DIRECTORY="$PROJECT_PATH/data/$EXP_ID/illumina"
+INDEX="$PROJECT_PATH/data/reference/bowtie2-index/TolC-oxb14-amplicon"
+OUTPUT_FOLDER="$PROJECT_PATH/data/$EXP_ID/alignment/bowtie2-single"
+mkdir -p $OUTPUT_FOLDER
+
+for SAMPLE_PATH in $DIRECTORY/*S127_R1_001.fastq.gz; do
+    SAMPLE=${SAMPLE_PATH##*/}
+    SAMPLE=${SAMPLE%_R1_001.fastq.gz}
+    FWD="$DIRECTORY/${SAMPLE}_R1_001.fastq.gz"
+    REV="$DIRECTORY/${SAMPLE}_R2_001.fastq.gz"
+    
+    bowtie2 -x $INDEX   \
+    -p 56               \
+    -1 $FWD             \
+    -2 $REV             \
+    --very-sensitive-local   \
+    --no-unal           \
+    --ma 2              \
+    --rfg 1000,1000     \
+    | samtools view -bS - | samtools sort -o $OUTPUT_FOLDER/$SAMPLE.bam -
+
+    samtools index $OUTPUT_FOLDER/$SAMPLE.bam
+    echo "$SAMPLE is aligned." >>/dev/stderr
+done

@@ -1,0 +1,1 @@
+bowtie2-build /project/greencenter/Toprak_lab/shared/TolC-Mutagenesis/data/reference/TolC-oxb14-amplicon.fasta TolC-oxb14-amplicon

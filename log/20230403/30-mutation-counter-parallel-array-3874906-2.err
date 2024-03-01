@@ -1,0 +1,47 @@
+# #!/bin/bash
+# 
+# #SBATCH --partition=256GB 		# partition name
+# #SBATCH --time=1-00:00 		# hours:minutes runlimit after which job will be killed
+# #SBATCH --array=0-9
+# #SBATCH --nodes=1
+# #SBATCH --job-name 30-mutation-counter-parallel-array		# Job name
+# #SBATCH -o ./log/20230403/30-mutation-counter-parallel-array-%j-%a.out		# File to which standard out will be written
+# #SBATCH -e ./log/20230403/30-mutation-counter-parallel-array-%j-%a.err 		# File to which standard err will be written
+# cat src/30-mutation-counter-parallel-array.run | perl -ne ' print "# ".$_ ' - >>/dev/stderr
+# printf "\n############################ END OF SOURCE SCRIPT #######################\n\n" >&2
+# 
+# source /home2/s414024/.bashrc
+# 
+# PROJECT_PATH="/project/greencenter/Toprak_lab/shared/TolC-Mutagenesis"
+# EXP_ID="20230403"
+# 
+# conda activate toprak-ngs
+# 
+# DIRECTORY="$PROJECT_PATH/data/$EXP_ID/alignment/bowtie2-single"
+# FASTA="$PROJECT_PATH/data/reference/TolC-oxb14-amplicon.fasta"
+# OUTPUT_FOLDER="$PROJECT_PATH/dump/$EXP_ID/mutation-tables-single"
+# CONTIG="TolC-oxb14-amplicon"
+# 
+# mkdir -p $OUTPUT_FOLDER
+# cd $PROJECT_PATH
+# 
+# 
+# FILES=($DIRECTORY/*.bam)
+# SAMPLE_PATH=${FILES[$SLURM_ARRAY_TASK_ID]}
+# SAMPLE=${SAMPLE_PATH##*/}
+# SAMPLE=${SAMPLE%.bam}
+# 
+# python3 src/30-mutation-counter.py   \
+# --bam $SAMPLE_PATH                   \
+# --fasta $FASTA                       \
+# --contig $CONTIG                     \
+# --start-codon-pos 100                 \
+# --stop-codon-pos 1581                 \
+# --base-quality-filter 30             \
+# --output $OUTPUT_FOLDER/$SAMPLE      
+#     
+# echo "$SAMPLE nucleotide changes counted." >>/dev/stderr
+############################ END OF SOURCE SCRIPT #######################
+
+0it [00:00, ?it/s]975534it [00:30, 32517.74it/s]975534it [00:40, 32517.74it/s]1975492it [01:00, 32996.65it/s]1975492it [01:10, 32996.65it/s]2928530it [01:30, 32435.58it/s]2928530it [01:40, 32435.58it/s]3880580it [02:00, 32158.98it/s]3880580it [02:10, 32158.98it/s]4832918it [02:30, 32009.54it/s]4832918it [02:40, 32009.54it/s]5795484it [03:00, 32035.37it/s]5795484it [03:10, 32035.37it/s]6746407it [03:30, 31924.88it/s]6746407it [03:40, 31924.88it/s]7694633it [04:00, 31823.83it/s]7694633it [04:10, 31823.83it/s]8646748it [04:30, 31796.72it/s]8646748it [04:40, 31796.72it/s]9602145it [05:00, 31812.11it/s]9602145it [05:10, 31812.11it/s]10553158it [05:30, 31777.92it/s]10553158it [05:40, 31777.92it/s]11511411it [06:00, 31827.76it/s]11511411it [06:10, 31827.76it/s]12460124it [06:30, 31765.95it/s]12460124it [06:40, 31765.95it/s]13421499it [07:00, 31850.48it/s]13647429it [07:05, 32091.24it/s]
+SML1_OXA_S131 nucleotide changes counted.
